@@ -1,0 +1,264 @@
+
+#magic-btn {
+    font-weight: bold;
+    color: black;
+    border-radius: 2.5rem;
+    cursor: pointer;
+    width: 140px;   /* wider */
+    height: 55px;   /* taller */
+    border: none;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem; /* adjust text size */
+    
+  }
+  #magic-btn .span-mother {
+    display: flex;
+    overflow: hidden;
+  }
+  
+  #magic-btn:hover .span-mother {
+    position: absolute;
+  }
+  
+  #magic-btn:hover .span-mother span {
+    transform: translateY(1.2em);
+  }
+  
+  #magic-btn .span-mother span:nth-child(1) {
+    transition: 0.2s;
+  }
+  
+  #magic-btn .span-mother span:nth-child(2) {
+    transition: 0.3s;
+  }
+  
+  #magic-btn .span-mother span:nth-child(3) {
+    transition: 0.4s;
+  }
+  
+  #magic-btn .span-mother span:nth-child(4) {
+    transition: 0.5s;
+  }
+  
+  #magic-btn .span-mother span:nth-child(5) {
+    transition: 0.6s;
+  }
+  
+  #magic-btn .span-mother span:nth-child(6) {
+    transition: 0.7s;
+  }
+  
+  #magic-btn .span-mother2 {
+    display: flex;
+    position: absolute;
+    overflow: hidden;
+  }
+  
+  #magic-btn .span-mother2 span {
+    transform: translateY(-1.2em);
+  }
+  
+  #magic-btn:hover .span-mother2 span {
+    transform: translateY(0);
+  }
+  
+  #magic-btn .span-mother2 span {
+    transition: 0.2s;
+  }
+  
+  #magic-btn .span-mother2 span:nth-child(2) {
+    transition: 0.3s;
+  }
+  
+  #magic-btn .span-mother2 span:nth-child(3) {
+    transition: 0.4s;
+  }
+  
+  #magic-btn .span-mother2 span:nth-child(4) {
+    transition: 0.5s;
+  }
+  
+  #magic-btn .span-mother2 span:nth-child(5) {
+    transition: 0.6s;
+  }
+  
+  #magic-btn .span-mother2 span:nth-child(6) {
+    transition: 0.7s;
+  }
+  
+
+
+
+
+#glitch-btn,
+#glitch-btn::after {
+  padding: 10px 50px;
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background-color: transparent;
+  position: relative;
+}
+
+#glitch-btn::after {
+  --move1: inset(50% 50% 50% 50%);
+  --move2: inset(31% 0 40% 0);
+  --move3: inset(39% 0 15% 0);
+  --move4: inset(45% 0 40% 0);
+  --move5: inset(45% 0 6% 0);
+  --move6: inset(14% 0 61% 0);
+  clip-path: var(--move1);
+  content: 'GLITCH';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+}
+
+#glitch-btn:hover::after {
+  animation: glitch_4011 1s;
+  animation-timing-function: steps(2, end);
+  text-shadow: -3px -3px 0px #1df2f0, 3px 3px 0px #E94BE8;
+  background-color: transparent;
+  border: 3px solid rgb(0, 255, 213);
+}
+
+#glitch-btn:hover {
+  text-shadow: -1px -1px 0px #1df2f0, 1px 1px 0px #E94BE8;
+  background-color: transparent;
+  border: 1px solid #BA55D3;
+  box-shadow: 0px 10px 10px -10px rgb(0, 255, 213);
+}
+
+@keyframes glitch_4011 {
+  0% {
+    clip-path: var(--move1);
+    transform: translate(0px,-10px);
+  }
+  10% {
+    clip-path: var(--move2);
+    transform: translate(-10px,10px);
+  }
+  20% {
+    clip-path: var(--move3);
+    transform: translate(10px,0px);
+  }
+  30% {
+    clip-path: var(--move4);
+    transform: translate(-10px,10px);
+  }
+  40% {
+    clip-path: var(--move5);
+    transform: translate(10px,-10px);
+  }
+  50% {
+    clip-path: var(--move6);
+    transform: translate(-10px,10px);
+  }
+  60% {
+    clip-path: var(--move1);
+    transform: translate(10px,-10px);
+  }
+  70% {
+    clip-path: var(--move3);
+    transform: translate(-10px,10px);
+  }
+  80% {
+    clip-path: var(--move2);
+    transform: translate(10px,-10px);
+  }
+  90% {
+    clip-path: var(--move4);
+    transform: translate(-10px,10px);
+  }
+  100% {
+    clip-path: var(--move1);
+    transform: translate(0);
+  }
+}
+
+
+
+/* Phones */
+@media (max-width: 480px) {
+  .hero h2 {
+    font-size: 1.8rem;
+    line-height: 1.2;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  #magic-btn, #glitch-btn {
+    width: 120px;
+    height: 50px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .hero h2 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+}
+
+
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero canvas,
+.hero #lights { /* if Hyperspeed attaches to #lights */
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: -1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .hero h2 {
+    font-size: 1.8rem;
+    line-height: 1.2;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  #magic-btn, #glitch-btn {
+    width: 120px;
+    height: 50px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero h2 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+}
+
