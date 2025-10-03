@@ -6,6 +6,8 @@ import Myart from "./Components/Myart/Myart";
 import About from "./Components/About/About"
 import Services from "./Components/Services/Services";
 import Contact from "./Components/Contact/Contact";
+import Footer from "./Components/Footer/Footer";
+import BackToTop from "./Components/BackToTop/BackToTop";
 
 const App = () => {
   return (
@@ -21,6 +23,8 @@ const App = () => {
             <>
               <Header />
               <Myart />
+              <Footer />
+              <BackToTop />
             </>
           }
         />

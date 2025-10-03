@@ -1,0 +1,26 @@
+    .footer {
+        width: 100%;
+        padding: 20px 10px;
+        background-color: #000;  /* dark background to match the page */
+        color: #fff;             /* white text */
+        text-align: center;
+        font-size: 14px;
+        border-top: 1px solid #333; /* subtle top border */
+    }
+    
+    /* Mobile adjustments */
+    @media (max-width: 480px) {
+        .footer {
+        font-size: 13px;
+        padding: 15px 10px;
+        }
+    }
+    
+    /* Tablets */
+    @media (max-width: 768px) {
+        .footer {
+        font-size: 14px;
+        padding: 18px 15px;
+        }
+    }
+    
