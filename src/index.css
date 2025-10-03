@@ -11,6 +11,9 @@
 body {
   min-height: 100vh;
   background-color: #000; /* fallback if Hyperspeed fails */
+  margin: 0;
+  padding: 0;             /* remove side padding to fix dark edges */
+  overflow-x: hidden;     /* prevent horizontal scroll */
 }
 
 a {
@@ -26,7 +29,7 @@ a {
 @media (max-width: 480px) {
   body {
     font-size: 14px;
-    padding: 0 10px;
+    padding: 0;           /* remove original 0 10px padding */
   }
 
   h1 {
@@ -46,6 +49,7 @@ a {
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
+    width: 100%;           /* ensure full width */
   }
 }
 
@@ -53,7 +57,7 @@ a {
 @media (max-width: 768px) {
   body {
     font-size: 15px;
-    padding: 0 15px;
+    padding: 0;           /* remove side padding */
   }
 
   h1 {
@@ -64,6 +68,7 @@ a {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 25px;
+    width: 100%;
   }
 
   .navbar {
@@ -81,6 +86,7 @@ a {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
+    width: 100%;
   }
 }
 
@@ -90,5 +96,6 @@ a {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 40px;
+    width: 100%;
   }
 }
