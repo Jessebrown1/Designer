@@ -30,28 +30,35 @@ const Myart = () => {
   const cardsRef = useRef([]);
 
   useEffect(() => {
-    // animate all cards one by one
-    gsap.fromTo(
-      cardsRef.current,
-      {
-        opacity: 0,
-        y: 50, // start slightly lower
+    // Create a timeline for staggered animations
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".myart-cards", // the whole cards container
+        start: "top 90%",        // earlier trigger for mobile
+        end: "bottom 60%",
+        toggleActions: "play none none none",
       },
+    });
+  
+    // Animate each card with stagger
+    tl.fromTo(
+      cardsRef.current,
+      { opacity: 0, y: 50 },
       {
         opacity: 1,
         y: 0,
-        duration: 1.5,
-        stagger: 0.6, // delay between each card
+        duration: 1.2,
         ease: "power3.out",
-        scrollTrigger: {
-          trigger: ".myart-cards",
-          start: "top 80%", // when section comes into view
-          end: "bottom 60%",
-          toggleActions: "play none none none",
-        },
+        stagger: 0.3, // delay between each card
       }
     );
+  
+    // Cleanup function
+    return () => {
+      ScrollTrigger.getAll().forEach((st) => st.kill());
+    };
   }, []);
+  
 
   return (
     <div className="myart-section full-height">
