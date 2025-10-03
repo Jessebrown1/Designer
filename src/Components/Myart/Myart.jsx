@@ -30,35 +30,33 @@ const Myart = () => {
   const cardsRef = useRef([]);
 
   useEffect(() => {
-    // Create a timeline for staggered animations
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".myart-cards", // the whole cards container
-        start: "top 90%",        // earlier trigger for mobile
-        end: "bottom 60%",
-        toggleActions: "play none none none",
-      },
+    cardsRef.current.forEach((card, i) => {
+      gsap.fromTo(
+        card,
+        { opacity: 0, y: 60 },  // slightly larger offset for better effect
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1.8,        // slower, smooth animation
+          ease: "power2.out",
+          delay: i * 0.2,       // stagger effect between cards
+          scrollTrigger: {
+            trigger: card,
+            start: "top 95%",   // mobile-friendly trigger
+            toggleActions: "play none none none",
+          },
+        }
+      );
     });
-  
-    // Animate each card with stagger
-    tl.fromTo(
-      cardsRef.current,
-      { opacity: 0, y: 50 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1.2,
-        ease: "power3.out",
-        stagger: 0.3, // delay between each card
-      }
-    );
-  
-    // Cleanup function
+
+    // Refresh ScrollTrigger after images load to prevent missed triggers
+    window.addEventListener("load", ScrollTrigger.refresh);
+
     return () => {
       ScrollTrigger.getAll().forEach((st) => st.kill());
+      window.removeEventListener("load", ScrollTrigger.refresh);
     };
   }, []);
-  
 
   return (
     <div className="myart-section full-height">
@@ -72,13 +70,10 @@ const Myart = () => {
         {products.map((product, index) => (
           <div
             key={product.id}
-            ref={(el) => (cardsRef.current[index] = el)} // store ref for animation
+            ref={(el) => (cardsRef.current[index] = el)}
             className="myart-card"
           >
-            {/* Image */}
             <img src={product.image} alt={product.name} className="myart-img" />
-
-            {/* Content */}
             <div className="myart-content">
               <h2>{product.name}</h2>
               <p>{product.description}</p>
