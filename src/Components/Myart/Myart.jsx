@@ -40,13 +40,13 @@ const Myart = () => {
       {
         opacity: 1,
         y: 0,
-        duration: 1,
-        stagger: 0.2, // delay between each card
+        duration: 1.5,
+        stagger: 0.6, // delay between each card
         ease: "power3.out",
         scrollTrigger: {
           trigger: ".myart-cards",
           start: "top 80%", // when section comes into view
-          end: "bottom 60%",
+          end: "bottom 80%",
           toggleActions: "play none none none",
         },
       }
