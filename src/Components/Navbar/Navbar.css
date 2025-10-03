@@ -3,13 +3,14 @@
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px 10%;
+    padding: 20px 2%;
     background: transparent;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
 }
+
 
 .logo {
     font-size: 32px;
@@ -20,7 +21,11 @@
 .navbar {
     display: flex;
     gap: 30px;
+
 }
+
+
+
 
 .navbar a {
     position: relative;
@@ -49,7 +54,7 @@
 .hamburger {
     display: none;
     font-size: 28px;
-    color: white;
+    color: #FFFFFF ;
     background: none;
     border: none;
     cursor: pointer;
@@ -87,4 +92,14 @@
     .navbar.active {
         transform: translateY(0);
     }
+}
+
+
+
+
+
+
+.logo-img {
+    height: 50px;     /* adjust based on navbar height */
+    width: auto;      /* keeps aspect ratio */
 }

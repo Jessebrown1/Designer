@@ -183,6 +183,21 @@
   }
 }
 
+/* Ensure button content stays centered */
+#glitch-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Make the pseudo-element also centered */
+#glitch-btn::after {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 
 
 /* Phones */

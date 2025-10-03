@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import './Navbar.css';
 import { Link } from "react-router-dom";
+import logo from "../../../public/logo.png"
 
 
 const Navbar = () => {
@@ -18,11 +19,19 @@ const Navbar = () => {
 
   return (
     <header ref={navRef} className="header">
-      <a href="/" className="logo">logo</a>
-
-      <button className="hamburger" onClick={() => setIsOpen(!isOpen)}>
-        ☰
-      </button>
+<a href="/" className="logo">
+  <img
+    src="../../../public/logo.png"  // path to your logo image
+    alt="My Logo"           // accessibility text
+    className="logo-img"    // optional CSS class
+  />
+</a>
+<button 
+  className="hamburger" 
+  onClick={() => setIsOpen(!isOpen)}
+>
+  {isOpen ? "✖" : "☰"}
+</button>
 
       <nav className={`navbar ${isOpen ? 'active' : ''}`}>
       <Link to="/" onClick={() => setIsOpen(false)}>Home</Link>
