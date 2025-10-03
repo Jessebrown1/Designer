@@ -1,25 +1,16 @@
-/* Import Fonts and Tailwind */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
 @import "tailwindcss";
-
-/* ================
-   GLOBAL RESETS
-================= */
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  overflow-x: hidden;          /* ✅ prevent side scroll */
-  background-color: #000;      /* fallback background */
-  font-family: "Poppins", sans-serif;
-}
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  max-width: 100%;             /* ✅ no element escapes screen */
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #000; /* fallback if Hyperspeed fails */
 }
 
 a {
@@ -28,73 +19,14 @@ a {
 }
 
 /* =====================
-   HEADER / NAVBAR BASE
-===================== */
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;                 /* ✅ full width */
-  padding: 20px 5%;
-  background: transparent;      /* changes on scroll if needed */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1000;
-}
-
-.logo-img {
-  height: 50px;
-  width: auto;
-}
-
-.navbar {
-  display: flex;
-  gap: 30px;
-}
-
-.navbar a {
-  position: relative;
-  font-size: 18px;
-  color: white;
-  font-weight: 500;
-}
-
-.navbar a::before {
-  content: '';
-  position: absolute;
-  width: 0;
-  top: 100%;
-  left: 0;
-  height: 2px;
-  background: #A020F0;
-  transition: 0.3s;
-}
-
-.navbar a:hover::before {
-  width: 100%;
-}
-
-/* Hamburger */
-.hamburger {
-  display: none;
-  font-size: 28px;
-  color: white;
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 1100;
-}
-
-/* =====================
-   RESPONSIVE DESIGN
+   GLOBAL RESPONSIVENESS
 ===================== */
 
-/* Phones (default mobile-first) */
+/* Small devices (phones) */
 @media (max-width: 480px) {
   body {
     font-size: 14px;
-    padding: 0;
+    padding: 0 10px;
   }
 
   h1 {
@@ -106,37 +38,14 @@ a {
     padding: 15px 5%;
   }
 
-  .navbar {
-    display: none; /* hide normal navbar */
-  }
-
-  .navbar.active {
-    display: flex;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: rgba(0,0,0,0.95);
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 25px;
-  }
-
   .navbar a {
-    font-size: 20px;
-  }
-
-  .hamburger {
-    display: block;
+    font-size: 16px;
   }
 
   .myart-cards {
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
-    width: 100%;
   }
 }
 
@@ -144,6 +53,7 @@ a {
 @media (max-width: 768px) {
   body {
     font-size: 15px;
+    padding: 0 15px;
   }
 
   h1 {
@@ -151,6 +61,7 @@ a {
   }
 
   .myart-cards {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 25px;
   }
@@ -160,20 +71,24 @@ a {
   }
 }
 
+/* Small laptops */
+@media (max-width: 1024px) {
+  body {
+    font-size: 16px;
+  }
 
-/* ========= SAFARI FIX FOR VH BUG ========= */
-:root {
-  --app-height: 100dvh; /* modern browsers */
-}
-
-@supports (-webkit-touch-callout: none) {
-  /* iOS Safari fallback */
-  :root {
-    --app-height: -webkit-fill-available;
+  .myart-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
   }
 }
 
-/* Utility class */
-.full-height {
-  min-height: var(--app-height);
+/* Larger screens */
+@media (min-width: 1280px) {
+  .myart-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+  }
 }
