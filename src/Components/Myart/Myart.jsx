@@ -46,7 +46,7 @@ const Myart = () => {
         scrollTrigger: {
           trigger: ".myart-cards",
           start: "top 80%", // when section comes into view
-          end: "bottom 80%",
+          end: "bottom 60%",
           toggleActions: "play none none none",
         },
       }
