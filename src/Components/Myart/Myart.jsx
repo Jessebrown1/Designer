@@ -54,7 +54,7 @@ const Myart = () => {
   }, []);
 
   return (
-    <div className="myart-section">
+    <div className="myart-section full-height">
       {/* Section Heading */}
       <h1 className="myart-title">
         My <span>Artwork</span>

@@ -91,3 +91,13 @@
     height: 180px; /* slightly smaller for phones */
   }
 }
+
+
+
+.myart-section {
+  width: 100%;
+  background: #f3f4f6;
+  padding: 4rem 2rem;
+  text-align: center;
+  min-height: var(--app-height); /* 🔥 use dynamic height */
+}

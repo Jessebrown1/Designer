@@ -159,3 +159,21 @@ a {
     gap: 15px;
   }
 }
+
+
+/* ========= SAFARI FIX FOR VH BUG ========= */
+:root {
+  --app-height: 100dvh; /* modern browsers */
+}
+
+@supports (-webkit-touch-callout: none) {
+  /* iOS Safari fallback */
+  :root {
+    --app-height: -webkit-fill-available;
+  }
+}
+
+/* Utility class */
+.full-height {
+  min-height: var(--app-height);
+}
