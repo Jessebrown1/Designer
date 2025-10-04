@@ -1,6 +1,7 @@
     import React from "react";
     import Hyperspeed from "../Hyperspeed/Hyperspeed";
     import './Header.css'
+    import { Link } from "react-router-dom";
 
     const Hero = () => {
     return (
@@ -21,37 +22,40 @@
     Visual storytelling that connects with people.
     </p>
 
-            {/* Buttons */}
-            <div className="mt-8 flex gap-6">
-            
+{/* Buttons */}
+<div className="mt-8 flex gap-6 justify-center">
+          {/* Contact button */}
+          <Link to="/contact">
             <button id="magic-btn">
-  <span className="span-mother">
-    <span>C</span>
-    <span>o</span>
-    <span>n</span>
-    <span>t</span>
-    <span>a</span>
-    <span>c</span>
-    <span>t</span>
-  </span>
-  <span className="span-mother2">
-    <span>C</span>
-    <span>o</span>
-    <span>n</span>
-    <span>t</span>
-    <span>a</span>
-    <span>c</span>
-    <span>t</span>
-  </span>
-</button>
+              <span className="span-mother">
+                <span>C</span>
+                <span>o</span>
+                <span>n</span>
+                <span>t</span>
+                <span>a</span>
+                <span>c</span>
+                <span>t</span>
+              </span>
+              <span className="span-mother2">
+                <span>C</span>
+                <span>o</span>
+                <span>n</span>
+                <span>t</span>
+                <span>a</span>
+                <span>c</span>
+                <span>t</span>
+              </span>
+            </button>
+          </Link>
 
-
-<button id="glitch-btn">Services</button>
-
-            </div>
+          {/* Services button */}
+          <Link to="/services">
+            <button id="glitch-btn">Services</button>
+          </Link>
         </div>
-        </div>
-    );
-    };
+      </div>
+    </div>
+  );
+};
 
-    export default Hero;
+export default Hero;
