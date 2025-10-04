@@ -1,0 +1,85 @@
+.about-section {
+    width: 100%;
+    padding: 80px 5%;
+    background: #0a0a0a; /* dark background */
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Optional subtle moving gradient as background animation */
+  .about-section::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, #A020F0, #5a00ff, #00ffff);
+    background-size: 400% 400%;
+    animation: gradientMove 20s ease infinite;
+    opacity: 0.05; /* very subtle */
+    z-index: 0;
+  }
+  
+  @keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  .about-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    position: relative;
+    z-index: 1; /* above background animation */
+  }
+  
+  /* Text and Image */
+  .about-text {
+    flex: 1;
+  }
+  
+  .about-text h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .about-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  .about-image {
+    flex: 1;
+  }
+  
+  .about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .about-content {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .about-text, .about-image {
+      width: 100%;
+    }
+  
+    .about-text h2 {
+      font-size: 1.8rem;
+    }
+  
+    .about-text p {
+      font-size: 0.95rem;
+    }
+  }
+  

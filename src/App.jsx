@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Navbar/Navbar";
 import Header from "./Components/Header/Header";
 import Myart from "./Components/Myart/Myart";
-import About from "./Components/About/About"
+import About from "./Components/About/About";
 import Services from "./Components/Services/Services";
 import Contact from "./Components/Contact/Contact";
 import Footer from "./Components/Footer/Footer";
@@ -15,7 +15,7 @@ const App = () => {
       {/* Navbar displayed on all pages */}
       <Navbar />
 
-      {/* Routes for different pages */}
+      {/* Main content */}
       <Routes>
         <Route
           path="/"
@@ -23,17 +23,17 @@ const App = () => {
             <>
               <Header />
               <Myart />
-              <Footer />
               <BackToTop />
             </>
           }
         />
-
-        {/* Example additional pages */}
-        <Route path="/" element={<About />} /> 
-        <Route path="/" element={<Services />} /> 
-        <Route path="/" element={<Contact />} /> 
+        <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
+
+      {/* Footer displayed on all pages */}
+      <Footer />
     </BrowserRouter>
   );
 };

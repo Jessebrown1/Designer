@@ -35,9 +35,9 @@ const Navbar = () => {
 
       <nav className={`navbar ${isOpen ? 'active' : ''}`}>
       <Link to="/" onClick={() => setIsOpen(false)}>Home</Link>
-  <Link to="#" onClick={() => setIsOpen(false)}>About</Link>
-  <Link to="#" onClick={() => setIsOpen(false)}>Services</Link>
-  <Link to="#" onClick={() => setIsOpen(false)}>Contact</Link>
+  <Link to="/about" onClick={() => setIsOpen(false)}>About</Link>
+  <Link to="/services" onClick={() => setIsOpen(false)}>Services</Link>
+  <Link to="/contact" onClick={() => setIsOpen(false)}>Contact</Link>
       </nav>
     </header>
   );
