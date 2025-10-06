@@ -21,10 +21,10 @@ const servicesList = [
 
 // Phone accessories with images
 const accessoriesList = [
-  { id: 1, name: "Phone Case", price: "$15", image: case2 },
-  { id: 2, name: "Wireless Charger", price: "$25", image: wireless },
-  { id: 3, name: "Screen Protector", price: "$10", image: protect },
-  { id: 4, name: "Earphones", price: "$20", image: ear},
+  { id: 1, name: "Phone Case", image: case2 },
+  { id: 2, name: "Wireless Charger",  image: wireless },
+  { id: 3, name: "Screen Protector",image: protect },
+  { id: 4, name: "Earphones", image: ear},
 ];
 
 const Services = () => {

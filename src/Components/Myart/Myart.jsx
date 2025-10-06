@@ -16,14 +16,14 @@ import design7 from "../../assets/design7.jpg";
 import design8 from "../../assets/design8.jpg";
 
 const products = [
-  { id: 1, name: "Abstract Painting", description: "Acrylic on canvas – vibrant colors for modern spaces.", price: "$120", image: design },
-  { id: 2, name: "Digital Illustration", description: "High-resolution art print ready for framing.", price: "$80", image: design2 },
-  { id: 3, name: "Custom Portrait", description: "Personalized digital portrait in unique style.", price: "$150", image: design3 },
-  { id: 4, name: "Landscape Artwork", description: "Oil on canvas – natural scenery in detail.", price: "$180", image: design4 },
-  { id: 5, name: "Street Pop Art", description: "Bright urban designs full of life.", price: "$95", image: design5 },
-  { id: 6, name: "Street Pop Art", description: "Bright urban designs full of life.", price: "$95", image: design6 },
-  { id: 7, name: "Street Pop Art", description: "Bright urban designs full of life.", price: "$95", image: design7 },
-  { id: 8, name: "Street Pop Art", description: "Bright urban designs full of life.", price: "$95", image: design8 },
+  { id: 1, name: "Abstract Painting", description: "Acrylic on canvas – vibrant colors for modern spaces.", image: design },
+  { id: 2, name: "Digital Illustration", description: "High-resolution art print ready for framing.",  image: design2 },
+  { id: 3, name: "Custom Portrait", description: "Personalized digital portrait in unique style.", image: design3 },
+  { id: 4, name: "Landscape Artwork", description: "Oil on canvas – natural scenery in detail.", image: design4 },
+  { id: 5, name: "Street Pop Art", description: "Bright urban designs full of life.", image: design5 },
+  { id: 6, name: "Street Pop Art", description: "Bright urban designs full of life.",image: design6 },
+  { id: 7, name: "Street Pop Art", description: "Bright urban designs full of life.",image: design7 },
+  { id: 8, name: "Street Pop Art", description: "Bright urban designs full of life.", image: design8 },
 ];
 
 const Myart = () => {
